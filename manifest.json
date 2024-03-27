@@ -385,10 +385,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "resources/screenshot_01.jpg",
+      "source_relative_path": "resources/screenshot_01.png",
       "output": {
         "resource": {
-          "relative_path": "resources/screenshot_01.jpg"
+          "relative_path": "resources/screenshot_01.png"
         }
       },
       "version": ""
