@@ -17,7 +17,7 @@ Windows 10 or 11
 
 # 家屋倒壊判定モジュールのカスタマイズ・ビルド方法
 
-## 1. [morpho2DHSolver.zip](/resources/customizeModule/morpho2DHSolver.zip)を自分のPCにコピーし解凍する。
+## 1. [morpho2DHSolver.zip](../resources/customizeModule/morpho2DHSolver.zip)を自分のPCにコピーし解凍する。
 
 ファイル構成は以下のようになっています。
 
@@ -137,7 +137,7 @@ end module
 
 `func_cforce.f90`に実装している判定ロジックは以下の通りです。
 
-![logic.svg](/resources/customizeModule/logic.svg)
+![logic.svg](../resources/customizeModule/logic.svg)
 
 ### 土石流外力を計算するサブルーチンの説明
 
@@ -289,4 +289,4 @@ iriclib.lib
 ## 5. カスタマイズ版のソルバーに切り替える
 
 カスタマイズ版のソルバーを指定して計算を実行方法については、
-[家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え](/gh-pages/manual/bldgCollapseSimuHowTo.html)をご覧ください。
+[家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え](../manual/bldgCollapseSimuHowTo.html)をご覧ください。

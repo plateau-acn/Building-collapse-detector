@@ -9,7 +9,6 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="3. 家屋倒壊判定モジュールのカスタマイズ方法 ">
     
-    
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -106,7 +105,7 @@
 <h2 id="os">OS</h2>
 <p>Windows 10 or 11</p>
 <h1 id="家屋倒壊判定モジュールのカスタマイズビルド方法">家屋倒壊判定モジュールのカスタマイズ・ビルド方法</h1>
-<h2 id="1-morpho2dhsolverzipを自分のpcにコピーし解凍する">1. <a href="/resources/customizeModule/morpho2DHSolver.zip">morpho2DHSolver.zip</a>を自分のPCにコピーし解凍する。</h2>
+<h2 id="1-morpho2dhsolverzipを自分のpcにコピーし解凍する">1. <a href="../resources/customizeModule/morpho2DHSolver.zip">morpho2DHSolver.zip</a>を自分のPCにコピーし解凍する。</h2>
 <p>ファイル構成は以下のようになっています。</p>
 <pre><code class="lang-text">morpho2DHSolver
   - iRICsolvers_Morpho2DH : ビルド済みのMorpho2DHのソルバー(morpho2d.exe)が保存されるフォルダ
@@ -216,7 +215,7 @@ contains
 end module
 </code></pre>
 <p><code>func_cforce.f90</code>に実装している判定ロジックは以下の通りです。</p>
-<p><img src="/resources/customizeModule/logic.svg" alt="logic.svg"></p>
+<p><img src="../resources/customizeModule/logic.svg" alt="logic.svg"></p>
 <h3 id="土石流外力を計算するサブルーチンの説明">土石流外力を計算するサブルーチンの説明</h3>
 <p>以下に示す<code>func_fbuilding.f90</code>内の<code>function fbuilding()</code>の中身を書き換えてください。
 それ以外の部分は変更しないでください。</p>
@@ -341,7 +340,7 @@ iriclib.lib</p>
 </code></pre>
 <h2 id="5-カスタマイズ版のソルバーに切り替える">5. カスタマイズ版のソルバーに切り替える</h2>
 <p>カスタマイズ版のソルバーを指定して計算を実行方法については、
-<a href="/gh-pages/manual/bldgCollapseSimuHowTo.html">家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え</a>をご覧ください。</p>
+<a href="../manual/bldgCollapseSimuHowTo.html">家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え</a>をご覧ください。</p>
 
 </article>
           </div>

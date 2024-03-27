@@ -7,11 +7,11 @@
 最初に、iRICのGUIで呼び出されるMorpho2DHのソルバを家屋倒壊判定モジュール組み込み版に切り替える必要があります。
 
 1. まずフォルダ`C:\Users\[ユーザ名]\iRIC_v4\private\solvers\iRICsolvers_Morpho2DH`を作成します。`[ユーザ名]`は、PCによって異なります。
-2. [morpho2DH_PK12.zip](/resources/bldgCollapseSimuHowTo/morpho2DH_PK12.zip)を
+2. [morpho2DH_PK12.zip](../resources/bldgCollapseSimuHowTo/morpho2DH_PK12.zip)を
 解凍して得られる`definition.xml`と`morpho2d.exe`と`translation_ja_JP.ts`を1.のフォルダのコピーします。
 3. 下図のように、iRICを起動して家屋倒壊判定モジュール組み込み版ソルバ`Morpho2DH PK12`を選択して新規プロジェクトを作成し、ウィンドウタイトルに`Morpho2DH PK12`と表示されていれば、正しくソルバが切り替えられたことになります。
 
-![capture_gui_title.png](/resources/bldgCollapseSimuHowTo/capture_gui_title.png)
+![capture_gui_title.png](../resources/bldgCollapseSimuHowTo/capture_gui_title.png)
 
 > [!WARNING]
 > `C:\Users\[ユーザ名]\iRIC_v4\solvers\iRICsolvers_Morpho2DH`というフォルダ(`private`がフォルダパスにないもの)がありますが、
@@ -21,9 +21,9 @@
 ## 建物耐力の設定
 
 前述の方法で家屋倒壊判定モジュール組み込み版ソルバ`Morpho2DH PK12`を選択して新規プロジェクトを作成し、以下のように建物耐力を設定します。
-建物耐力設定以外の操作は、[1. オリジナルiRIC Morpho2DHの使い方](/gh-pages/manual/originalSimuHowTo.html)をご参照ください。
+建物耐力設定以外の操作は、[1. オリジナルiRIC Morpho2DHの使い方](../manual/originalSimuHowTo.html)をご参照ください。
 
-![capture01.png](/resources/bldgCollapseSimuHowTo/capture01.png)
+![capture01.png](../resources/bldgCollapseSimuHowTo/capture01.png)
 
 * ①メニュー「計算条件」⇒「設定」を選択肢、「計算条件」ウィンドウを開く
 * ②左のリストから「建物」を選択
@@ -37,8 +37,8 @@
 
 建物耐力の設定以外は、
 シミュレーションの実行方法・結果の確認方法含めてオリジナル版と同じですので、
-[1. オリジナルiRIC Morpho2DHの使い方](/gh-pages/manual/originalSimuHowTo.html)をご参照ください。
+[1. オリジナルiRIC Morpho2DHの使い方](../manual/originalSimuHowTo.html)をご参照ください。
 
 計算が完了し、建屋の破壊状況を可視化すると以下のような結果となります。（緑色が倒壊・赤色が非倒壊）
 
-![capture_result.png](/resources/bldgCollapseSimuHowTo/capture_result.png)
+![capture_result.png](../resources/bldgCollapseSimuHowTo/capture_result.png)
