@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>2. 家屋倒壊判定モジュールを用いた土石流シミュレーションの実行方法 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="2. 家屋倒壊判定モジュールを用いた土石流シミュレーションの実行方法 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="2-家屋倒壊判定モジュールを用いた土石流シミュレーションの実行方法">2. 家屋倒壊判定モジュールを用いた土石流シミュレーションの実行方法</h1>
+
+<p>本章では、家屋倒壊判定モジュールを用いた土石流シミュレーションの実行方法を説明します。</p>
+<h2 id="家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え">家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え</h2>
+<p>最初に、iRICのGUIで呼び出されるMorpho2DHのソルバを家屋倒壊判定モジュール組み込み版に切り替える必要があります。</p>
+<ol>
+<li>まずフォルダ<code>C:\Users\[ユーザ名]\iRIC_v4\private\solvers\iRICsolvers_Morpho2DH</code>を作成します。<code>[ユーザ名]</code>は、PCによって異なります。</li>
+<li><a href="/resources/bldgCollapseSimuHowTo/morpho2DH_PK12.zip">morpho2DH_PK12.zip</a>を
+解凍して得られる<code>definition.xml</code>と<code>morpho2d.exe</code>と<code>translation_ja_JP.ts</code>を1.のフォルダのコピーします。</li>
+<li>下図のように、iRICを起動して家屋倒壊判定モジュール組み込み版ソルバ<code>Morpho2DH PK12</code>を選択して新規プロジェクトを作成し、ウィンドウタイトルに<code>Morpho2DH PK12</code>と表示されていれば、正しくソルバが切り替えられたことになります。</li>
+</ol>
+<p><img src="/resources/bldgCollapseSimuHowTo/capture_gui_title.png" alt="capture_gui_title.png"></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><code>C:\Users\[ユーザ名]\iRIC_v4\solvers\iRICsolvers_Morpho2DH</code>というフォルダ(<code>private</code>がフォルダパスにないもの)がありますが、
+これはオリジナルのソルバですので、間違えて上書きしないようにしてください。</p>
+</div>
+<h2 id="建物耐力の設定">建物耐力の設定</h2>
+<p>前述の方法で家屋倒壊判定モジュール組み込み版ソルバ<code>Morpho2DH PK12</code>を選択して新規プロジェクトを作成し、以下のように建物耐力を設定します。
+建物耐力設定以外の操作は、<a href="/gh-pages/manual/originalSimuHowTo.html">1. オリジナルiRIC Morpho2DHの使い方</a>をご参照ください。</p>
+<p><img src="/resources/bldgCollapseSimuHowTo/capture01.png" alt="capture01.png"></p>
+<ul>
+<li>①メニュー「計算条件」⇒「設定」を選択肢、「計算条件」ウィンドウを開く</li>
+<li>②左のリストから「建物」を選択</li>
+<li>③「建物破壊」を「使用する」とし、「編集」ボタンを押して「建物倒壊応力」ウィンドウを開く。</li>
+<li>④左側テーブルのコード1の行の「限界破壊応力」に、建物耐力の数値(kN/m)です。GUIの表記は誤記ですので注意してください。今回は500kN/mと入力してください。
+<ul>
+<li>このパラメータは木造建物の基本的な耐力を設定する数値ですが、500～800kN/m程度にすると、既往の実被害の再現度が高くなることが分かっています。
+この数値の妥当性・物理的意味については今後検証していく必要があります。</li>
+<li>コード7の行の「限界破壊応力」の数値は4000kN/mのままで構いません。RC造建物等の倒壊する可能性が低い建物の想定ですので、大きな数値を設定しておけばよいです。</li>
+</ul>
+</li>
+</ul>
+<h2 id="シミュレーションの実行">シミュレーションの実行</h2>
+<p>建物耐力の設定以外は、
+シミュレーションの実行方法・結果の確認方法含めてオリジナル版と同じですので、
+<a href="/gh-pages/manual/originalSimuHowTo.html">1. オリジナルiRIC Morpho2DHの使い方</a>をご参照ください。</p>
+<p>計算が完了し、建屋の破壊状況を可視化すると以下のような結果となります。（緑色が倒壊・赤色が非倒壊）</p>
+<p><img src="/resources/bldgCollapseSimuHowTo/capture_result.png" alt="capture_result.png"></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

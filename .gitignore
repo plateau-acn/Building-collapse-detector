@@ -1,0 +1,8 @@
+# docfxの生成物を全て除外する時
+#/*
+#!.gitignore
+#!/markdown/
+
+# docfxの生成物を除外しない時
+# ファイルサイズが大きくてpush出来ないので、ひとまずiproを除外
+/resources/bldgCollapseSimuHowTo/Yagi11_tokenV18_PK12_sample.ipro

@@ -1,0 +1,1717 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command line to run this workspace:
+#        "C:\Program Files\FME\fme.exe" "C:\Users\s-okayama\株式会社ウエスコ Dropbox\岡山河川課\2023_R05業務\01_精緻な土砂災害シミュレーション\05_11_OSS\fmwファイル\建築物LOD1データ→シェープファイルの変換.fmw"
+#          --DestDataset_SHAPEFILE "C:\Users\Administrator"
+#          --SourceDataset_CITYGML "C:\Users\Administrator\52341127_bldg_6697.gml"
+#          --FME_LAUNCH_VIEWER_APP "YES"
+#    
+#!   A0_PREVIEW_IMAGE="data:image/png;base64,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"
+#!   ARCGIS_COMPATIBILITY="ARCGIS_AUTO"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="3260.87 282.751"
+#!   DOC_TOP_LEFT="37.8748 93.0004"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="23619"
+#!   FME_BULK_MODE_THRESHOLD="2000"
+#!   FME_DOCUMENT_GUID="3cafe8a0-c11e-4c16-b3e1-ccb0ddcc8efd"
+#!   FME_DOCUMENT_PRIORGUID="458936b2-c9de-4929-a38f-0d5c337a54a9,929cc76a-2def-44ca-9a9e-66c1dcf62e0a,daf08d33-77f5-4c38-a69a-ce9d709c73f6,37d3dca8-a55b-4c7e-b75b-fe58895f48a6,f0d6555d-8e3e-4adb-803f-0f92f053a6fb,657f0ed9-2ee4-4247-b140-dc77bba39acd,684a926b-c79f-4ff8-8538-967974108e85,27e3ba22-f2df-453e-b649-0e5045734fc7,23b00c8b-03c4-4307-a2f4-3212aff7c7dc,e161db96-829b-4e4d-b4c7-5c8925dd58fb,e599baec-7e83-42e9-9b20-8f1fced315e0,f3fd7006-ddc9-469b-a490-e747619656ba,3990c066-bb33-4c6a-b24c-84dce4ec9fac,26f60149-ec70-448a-b8e7-7a448031814a,ab4f87e9-623b-4a54-b179-8db81e247122"
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_NAMES_ENCODING="UTF-8"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2023.1.0.0 (20230825 - Build 23619 - WIN64)"
+#!   LAST_SAVE_DATE="2024-03-26T16:36:01"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="39"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-563.022 617.258"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="121"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="CITYGML"
+#!   DATASET="$(SourceDataset_CITYGML)"
+#!   KEYWORD="CITYGML_2"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="citygml_ambient_intensity xml_real64 citygml_border_color xml_buffer citygml_diffuse_color xml_buffer citygml_emissive_color xml_buffer citygml_image_uri xml_buffer citygml_is_front xml_boolean citygml_is_smooth xml_boolean citygml_level_of_detail xml_ubyte citygml_library_object xml_buffer citygml_lod_name xml_buffer citygml_mime_type xml_buffer citygml_orientation_matrix xml_buffer citygml_prefer_world_file xml_boolean citygml_shininess xml_real64 citygml_specular_color xml_buffer citygml_target xml_buffer citygml_target{}.coordinate_list{}.coordinates xml_buffer citygml_target{}.coordinate_list{}.ring xml_buffer citygml_target{}.uri xml_buffer citygml_target{}.world_to_texture_matrix xml_buffer citygml_texture_type xml_char(16) citygml_theme xml_buffer citygml_transformation_matrix xml_buffer citygml_transparency xml_real64 citygml_wrap_mode xml_char(16) fme_basename xml_char(50) fme_color xml_char(50) fme_dataset xml_char(50) fme_feature_type xml_char(50) fme_fill_color xml_char(50) fme_geometry xml_char(50) fme_primary_axis xml_real64 fme_rotation xml_real64 fme_secondary_axis xml_real64 fme_start_angle xml_real64 fme_sweep_angle xml_real64 fme_text_size xml_real64 fme_text_string xml_char(50) fme_type xml_char(50) gml_id xml_buffer gml_parent_id xml_buffer multi_reader_full_id xml_int32 multi_reader_id xml_int32 multi_reader_keyword xml_char(50) multi_reader_type xml_char(50)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILE_OR_URL"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="23619"
+#!   COORDSYS=""
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="TEXTURE_DIRECTORY THEME_NAME"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the CityGML file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_ADD_FEATURE_TYPE_DEFAULT"
+#!   VALUE="import"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a name for the CityGML file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="SHAPEFILE"
+#!   DATASET="$(DestDataset_SHAPEFILE)"
+#!   KEYWORD="SHAPEFILE_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="10"
+#!   ATTR_CASE="FIRST_ALPHA"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="shapefile_type {FME_GEN_GEOMETRY} shape_dimension AUTO"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_basename varchar(50) fme_color varchar(50) fme_dataset varchar(50) fme_feature_type varchar(50) fme_fill_color varchar(50) fme_geometry varchar(50) fme_primary_axis double fme_rotation double fme_secondary_axis double fme_start_angle double fme_sweep_angle double fme_text_size double fme_text_string varchar(50) fme_type varchar(50) shapefile_type varchar(30)"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP shape_layer_group DIMENSION Shapefile&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE shape_dimension Dimension&lt;space&gt;From&lt;space&gt;First&lt;space&gt;Feature,AUTO%2D,2D%2D&lt;space&gt;+&lt;space&gt;Measures,2DM%3D&lt;space&gt;+&lt;space&gt;Measures,3DM Output Dimension&quot; AUTO "
+#!   ATTR_INDEX_TYPES="Indexed"
+#!   ATTR_NAME_INVALID_CHARS="."
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="22627"
+#!   COORDSYS="JGD2011-05_FME"
+#!   FANOUT_EXPRESSION="&lt;Unused&gt;"
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="SHAPEFILE_OUT_SURFACE_SOLID_STORAGE SHAPEFILE_OUT_MEASURES_AS_Z"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_GEOMETRY_TYPE"
+#!   VALUE="shapefile_first_feature"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Shapefile1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Shapefile"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the Esri Shapefile(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the Esri Shapefile"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_buffer"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_buffer"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_buffer"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_xml"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_datetime"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_date"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_time"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_int64"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_uint64"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_int32"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_uint32"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_int16"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_uint16"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_byte"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_ubyte"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_real32"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_real64"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_decimal(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_boolean"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(20)"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(8)"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_char(12)"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_geometry"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="citygml_uri"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="citygml_uri"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="citygml_csv"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="citygml_xml_string"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="citygml_date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="CITYGML"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(254)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(254)"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(254)"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(254)"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="datetime"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(12)"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(31,15)"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(11,0)"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(15,7)"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(20,0)"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="logical"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="short"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(6,0)"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="short"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(4,0)"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="short"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(4,0)"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="long"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(11,0)"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="long"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(6,0)"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="number(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_no_geom"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_line"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_aggregate"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_text"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_arc"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_surface"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_solid"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_mesh"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_raster"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_area"
+#!   FME_TYPE="fme_voxel_grid"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="xml_no_geom"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="CITYGML"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_multipoint"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_point"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_line"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_line"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_multipatch"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_multipatch"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_first_feature"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_null"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_feature_table"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_polygon"
+#!   FME_TYPE="fme_voxel_grid"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="shapefile_first_feature"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="SHAPEFILE"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="Building"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="7"
+#!   FEAT_GEOMTYPE="shapefile_first_feature"
+#!   POSITION="2844.7498124981253 201.18206141077812"
+#!   BOUNDING_RECT="2844.7498124981253 201.18206141077812 454 71"
+#!   ORDER="500000000000004"
+#!   COLLAPSED="false"
+#!   KEYWORD="SHAPEFILE_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="height" ATTR_TYPE="float" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="kouzou" ATTR_TYPE="number(254,10)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="nendai" ATTR_TYPE="number(254,10)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="shape_dimension" PARM_VALUE="AUTO"/>
+#!     <DEFLINE_PARM PARM_NAME="shape_layer_group" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="Building"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="21"
+#!   FEAT_GEOMTYPE="xml_aggregate xml_arc xml_area xml_line xml_no_geom xml_point xml_solid xml_surface"
+#!   POSITION="37.874843748437456 164.00037500375004"
+#!   BOUNDING_RECT="37.874843748437456 164.00037500375004 454 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="CITYGML_2"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   MERGE_FILTER=""
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="gml_id" ATTR_TYPE="xml_buffer"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="gml_parent_id" ATTR_TYPE="xml_buffer"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_target_uri" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_feature_role" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_feature_role_attr_name" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_feature_role_attr_val" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="gml_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="gml_name" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_creationDate" ATTR_TYPE="xml_date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_terminationDate" ATTR_TYPE="xml_date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="externalReference{}.externalObject.name" ATTR_TYPE="xml_xml" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="externalReference{}.externalObject.uri" ATTR_TYPE="xml_xml" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="externalReference{}.informationSystem" ATTR_TYPE="xml_xml" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_generalizes_to{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_relative_to_terrain" ATTR_TYPE="xml_char(33)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_relative_to_water" ATTR_TYPE="xml_char(38)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_class" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_class_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_function{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_function{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_usage{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_usage{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_year_of_construction" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_year_of_demolition" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_roof_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_roof_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_measured_height" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_measured_height_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_storeys_above_ground" ATTR_TYPE="xml_uint64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_storeys_below_ground" ATTR_TYPE="xml_uint64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_storey_heights_above_ground" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_storey_heights_above_ground_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_storey_heights_below_ground" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_storey_heights_below_ground_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_outer_building_installation{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_interior_building_installation{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_bounded_by{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_level_of_detail{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_interior_room{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_consists_of_building_part{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="citygml_address{}.xlink_href" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_attribute{}" ATTR_TYPE="xml_xml" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_part_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_branch_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_prefecture{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_prefecture{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_city{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_city{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_route" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_start_post" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_end_post" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_start_lat" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_start_long" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_alternative_name{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_river_code" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_river_code_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_river_name" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_side_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_side_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_post" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_post_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_distance" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_distance_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_post" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_post_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_distance" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_distance_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_post" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_post_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_distance" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_distance_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_end_post" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_end_post_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_lef_end_distance" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_lef_end_distance_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_post" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_post_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_distance" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_distance_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_post" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_post_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_distance" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_distance_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_part_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_branch_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_prefecture{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_prefecture{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_city{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_city{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_route" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_start_post" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_end_post" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_start_lat" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_start_long" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_alternative_name{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_class" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_class_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_function{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_function{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_src_scale{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_src_scale{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_geometry_src_desc{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_geometry_src_desc{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_thematic_src_desc{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_thematic_src_desc{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_appearance_src_desc{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_appearance_src_desc{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_lod1_height_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_lod1_height_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_lod_type{}" ATTR_TYPE="xml_char(3)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_serial_number_of_building_certification" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_site_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_site_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_total_floor_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_total_floor_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_footprint_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_footprint_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_roof_edge_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_roof_edge_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_development_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_development_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_org_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_org_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_fireproof_structure_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_fireproof_structure_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_implementing_body" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_urban_plan_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_urban_plan_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_area_classification_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_area_classification_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_districts_and_zones_type{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_districts_and_zones_type{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_land_use_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_land_use_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_reference" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage2" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage2_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage2" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage2_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage2" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage2_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage3" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage3_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_ground_floor_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_ground_floor_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_second_floor_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_second_floor_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_third_floor_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_third_floor_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_first_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_first_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_second_usage" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_second_usage_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_vacancy" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_vacancy_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_coverage_rate" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_floor_area_rate" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_specified_building_coverage_rate" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_specified_floor_area_rate" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_standard_floor_area_rate" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_height" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_height_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_eave_height" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_eave_height_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_note" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_survey_year" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_description_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank_org" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank_org_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_depth" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_depth_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_description_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank_org" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank_org_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_depth" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_depth_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_description_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_area_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_area_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_description_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank_org" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank_org_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_depth" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_depth_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_admin_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_admin_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_scale" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_scale_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_duration" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_duration_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_description_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank_org" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank_org_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_depth" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_depth_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_building_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_branch_id" ATTR_TYPE="xml_int64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_part_id" ATTR_TYPE="xml_int64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_prefecture" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_prefecture_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_city" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_building_idattribute{}.uro_building_idattribute_uro_city_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_ifc_building_attribute{}" ATTR_TYPE="xml_xml" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_weekday_hours" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_weekend_hours" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_phone" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_website" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_furnishing_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_furnishing_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_furnishing_attribute_uro_floor_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_public_tag_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_public_tag_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_public_tag_attribute_uro_ucode" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_floor_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_is_restricted" ATTR_TYPE="xml_boolean" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_suite" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_is_public" ATTR_TYPE="xml_boolean" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_toll_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_toll_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_category" ATTR_TYPE="xml_boolean" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_ordinal" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_start_node" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_end_node" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_category" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_category_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_roof" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_floor_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_name" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_string_value" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_int_value" ATTR_TYPE="xml_int64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_double_value" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_code_value" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_code_value_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_date_value" ATTR_TYPE="xml_date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_uri_value" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_measured_value" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_measured_value_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_description" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_unit" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_zone_attribute_uro_source" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_zone_attribute_uro_source_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_indoor_building_attribute{}.uro_indoor_zone_attribute_uro_floor_id" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_string_value" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_int_value" ATTR_TYPE="xml_int64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_double_value" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_measured_value" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_measured_value_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_date_value" ATTR_TYPE="xml_date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_uri_value" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_class" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_class_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_name" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_capacity" ATTR_TYPE="xml_int64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_owner" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_floor_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_floor_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_store_floor_area" ATTR_TYPE="xml_real64" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_store_floor_area_units" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_inaugural_date" ATTR_TYPE="xml_date" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_year_opened" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_year_closed" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_key_tenants" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_availability" ATTR_TYPE="xml_boolean" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_urban_plan_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_urban_plan_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_area_classification_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_area_classification_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_districts_and_zones_type{}" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_districts_and_zones_type{}.codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_land_use_type" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_land_use_type_codeSpace" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_reference" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_note" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_survey_year" ATTR_TYPE="xml_buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="CITYGML_2"
+#!   OVERRIDE="-CITYGML_2_DATASET"
+#!   DATASET="CITYGML_2/52341127_bldg_6697.gml"
+#! />
+#! </READER_DATASETS>
+#! <WRITER_DATASETS>
+#! <DATASET
+#!   NAME="SHAPEFILE_1"
+#!   OVERRIDE="-SHAPEFILE_1_DATASET"
+#!   DATASET="SHAPEFILE_1/Administrator"
+#! />
+#! </WRITER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI DIRNAME DestDataset_SHAPEFILE Destination Esri Shapefile Folder:"
+#!   DEFAULT_VALUE="C:\Users\Administrator"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CITYGML INCLUDE_WEB_BROWSER%CityGML_Files(*.gml;*.xml;*.gz)|*.gml;*.xml;*.gz|CityGML_Files(*.gml)|*.gml|CityGML_Files(*.xml)|*.xml|Compressed_CityGML_Files(*.gz)|*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|All_Files(*)|* Source CityGML File(s):"
+#!   DEFAULT_VALUE="C:\Users\Administrator\52341127_bldg_6697.gml"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <USER_PARAMETERS
+#!   FORM="eyJwYXJhbWV0ZXJzIjpbeyJhY2Nlc3NNb2RlIjoid3JpdGUiLCJkZWZhdWx0VmFsdWUiOiJDOlxcVXNlcnNcXEFkbWluaXN0cmF0b3IiLCJpdGVtc1RvU2VsZWN0IjoiZm9sZGVycyIsIm5hbWUiOiJEZXN0RGF0YXNldF9TSEFQRUZJTEUiLCJwcm9tcHQiOiJEZXN0aW5hdGlvbiBFc3JpIFNoYXBlZmlsZSBGb2xkZXI6IiwicmVxdWlyZWQiOnRydWUsInNlbGVjdE11bHRpcGxlIjpmYWxzZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6ImZpbGUiLCJ2YWxpZGF0ZUV4aXN0ZW5jZSI6ZmFsc2UsInZhbHVlVHlwZSI6InN0cmluZyJ9LHsiYWNjZXNzTW9kZSI6InJlYWQiLCJkZWZhdWx0VmFsdWUiOiJDOlxcVXNlcnNcXEFkbWluaXN0cmF0b3JcXDUyMzQxMTI3X2JsZGdfNjY5Ny5nbWwiLCJmaWx0ZXJzIjpbeyJkZXNjcmlwdGlvbiI6IkNpdHlHTUwgRmlsZXMiLCJmaWx0ZXIiOlsiKi5nbWwiLCIqLnhtbCIsIiouZ3oiXX0seyJkZXNjcmlwdGlvbiI6IkNpdHlHTUwgRmlsZXMiLCJmaWx0ZXIiOlsiKi5nbWwiXX0seyJkZXNjcmlwdGlvbiI6IkNpdHlHTUwgRmlsZXMiLCJmaWx0ZXIiOlsiKi54bWwiXX0seyJkZXNjcmlwdGlvbiI6IkNvbXByZXNzZWQgQ2l0eUdNTCBGaWxlcyIsImZpbHRlciI6WyIqLmd6Il19LHsiZGVzY3JpcHRpb24iOiJBcmNoaXZlIEZpbGVzIiwiZmlsdGVyIjpbIiouN3oiLCIqLjd6aXAiLCIqLnJhciIsIioucnZ6IiwiKi50YXIiLCIqLnRhci5iejIiLCIqLnRhci5neiIsIioudGd6IiwiKi56aXAiLCIqLnppcHgiXX0seyJkZXNjcmlwdGlvbiI6IkNvbXByZXNzZWQgRmlsZXMiLCJmaWx0ZXIiOlsiKi5iejIiLCIqLmd6Il19LHsiZGVzY3JpcHRpb24iOiJBbGwgRmlsZXMiLCJmaWx0ZXIiOlsiKiJdfV0sImluY2x1ZGVXZWJCcm93c2VyIjp0cnVlLCJpdGVtc1RvU2VsZWN0IjoiZmlsZXMiLCJuYW1lIjoiU291cmNlRGF0YXNldF9DSVRZR01MIiwicHJvbXB0IjoiU291cmNlIENpdHlHTUwgRmlsZShzKToiLCJyZXF1aXJlZCI6dHJ1ZSwic2VsZWN0TXVsdGlwbGUiOnRydWUsInN1cHBvcnRlZFZhbHVlVHlwZXMiOlsiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJmaWxlIiwidmFsaWRhdGVFeGlzdGVuY2UiOmZhbHNlLCJ2YWx1ZVR5cGUiOiJzdHJpbmcifV19"
+#! >
+#! <PARAMETER_INFO>
+#!     <INFO NAME="DestDataset_SHAPEFILE" 
+#!   DEFAULT_VALUE="C:\Users\Administrator"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI DIRNAME DestDataset_SHAPEFILE Destination Esri Shapefile Folder:"
+#! />
+#!     <INFO NAME="SourceDataset_CITYGML" 
+#!   DEFAULT_VALUE="C:\Users\Administrator\52341127_bldg_6697.gml"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="true"
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_CITYGML INCLUDE_WEB_BROWSER%CityGML_Files(*.gml;*.xml;*.gz)|*.gml;*.xml;*.gz|CityGML_Files(*.gml)|*.gml|CityGML_Files(*.xml)|*.xml|Compressed_CityGML_Files(*.gz)|*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|All_Files(*)|* Source CityGML File(s):"
+#! />
+#! </PARAMETER_INFO>
+#! </USER_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="14"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Yu Gothic UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;必要な属性だけ抽出&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="757.25031250312486 375.7510625106251"
+#!   TOP_LEFT="757.25031250312486 375.7510625106251"
+#!   BOTTOM_RIGHT="1148.0740332403323 376.7510625106251"
+#!   BOUNDING_RECT="757.25031250312486 375.7510625106251 390.82372073720734 -1"
+#!   ORDER="500000000000016"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   UUID="{5ffe2a94-e228-45d2-9344-5c6e199ca4ef}"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="18"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;hr { height: 1px; border-width: 0; }&#10;li.unchecked::marker { content: &quot;\2610&quot;; }&#10;li.checked::marker { content: &quot;\2612&quot;; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Yu Gothic UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;属性名の変更&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1450.9381093810939 375.7510625106251"
+#!   TOP_LEFT="1450.9381093810939 375.7510625106251"
+#!   BOTTOM_RIGHT="1756.2675626756268 270.75031250312503"
+#!   BOUNDING_RECT="1450.9381093810939 375.7510625106251 305.32945329453287 105.00075000750007"
+#!   ORDER="500000000000017"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   UUID="{cf2f73f3-cf68-4ff2-a7bf-1169b4f50e69}"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="19"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;hr { height: 1px; border-width: 0; }&#10;li.unchecked::marker { content: &quot;\2610&quot;; }&#10;li.checked::marker { content: &quot;\2612&quot;; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Yu Gothic UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2Dポリゴンに変換&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2190.9639652646529 375.7510625106251"
+#!   TOP_LEFT="2190.9639652646529 375.7510625106251"
+#!   BOTTOM_RIGHT="2599.9299499244999 270.75031250312503"
+#!   BOUNDING_RECT="2190.9639652646529 375.7510625106251 408.96598465984698 105.00075000750007"
+#!   ORDER="500000000000018"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   UUID="{f05e8dac-31c2-43c8-9791-e0fb7968aa33}"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="20"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;hr { height: 1px; border-width: 0; }&#10;li.unchecked::marker { content: &quot;\2610&quot;; }&#10;li.checked::marker { content: &quot;\2612&quot;; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Yu Gothic UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;建築物LOD1の読み込み&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="37.874843748437456 375.7510625106251"
+#!   TOP_LEFT="37.874843748437456 375.7510625106251"
+#!   BOTTOM_RIGHT="502.45437704377042 270.75031250312503"
+#!   BOUNDING_RECT="37.874843748437456 375.7510625106251 464.57953329533296 105.00075000750007"
+#!   ORDER="500000000000016"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   UUID="{c0462d00-33ff-4441-89ce-fda1eab6aa9a}"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="22"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;hr { height: 1px; border-width: 0; }&#10;li.unchecked::marker { content: &quot;\2610&quot;; }&#10;li.checked::marker { content: &quot;\2612&quot;; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Yu Gothic UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;建物SHPの出力&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="2844.7498124981253 375.7510625106251"
+#!   TOP_LEFT="2844.7498124981253 375.7510625106251"
+#!   BOTTOM_RIGHT="3253.7157971579722 270.75031250312503"
+#!   BOUNDING_RECT="2844.7498124981253 375.7510625106251 408.96598465984698 105.00075000750007"
+#!   ORDER="500000000000018"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   UUID="{0d574478-05b6-4daa-9b05-a179a9a2354e}"
+#!   COLOUR="1,1,0.95686274509803926,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="0"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="15"
+#!   TYPE="AttributeManager"
+#!   VERSION="4"
+#!   POSITION="1371.0563905639058 164.00037500375004"
+#!   BOUNDING_RECT="1371.0563905639058 164.00037500375004 454 71"
+#!   ORDER="500000000000012"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23619"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="citygml_measured_height" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="kouzou" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="nendai" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="citygml_measured_height citygml_measured_height  NO_OP uro_building_detail_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_building_detail_attribute_uro_building_structure_type uro_building_detail_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_building_detail_attribute_uro_building_structure_type  NO_OP uro_building_detail_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_building_detail_attribute_uro_building_structure_type_codeSpace uro_building_detail_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_building_detail_attribute_uro_building_structure_type_codeSpace  NO_OP  kouzou &lt;at&gt;Value&lt;openparen&gt;uro_building_detail_attribute&lt;opencurly&gt;0&lt;closecurly&gt;.uro_building_detail_attribute_uro_building_structure_type&lt;closeparen&gt; SET_TO uro_key_value_pair_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value uro_key_value_pair_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value  NO_OP uro_key_value_pair_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value_codeSpace uro_key_value_pair_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value_codeSpace  NO_OP  nendai &quot;FME_CONDITIONAL:DEFAULT_VALUE&apos;_FME_NO_OP_&apos;BOOL_OP;OR;COMPOSITE_TEST;1;TEST &lt;at&gt;Value&lt;openparen&gt;uro_key_value_pair_attribute&lt;opencurly&gt;0&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_key&lt;closeparen&gt; = 100&apos;&lt;at&gt;Value&lt;openparen&gt;uro_key_value_pair_attribute&lt;opencurly&gt;0&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value&lt;closeparen&gt;&apos;BOOL_OP;OR;COMPOSITE_TEST;1;TEST &lt;at&gt;Value&lt;openparen&gt;uro_key_value_pair_attribute&lt;opencurly&gt;1&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_key&lt;closeparen&gt; = 100&apos;&lt;at&gt;Value&lt;openparen&gt;uro_key_value_pair_attribute&lt;opencurly&gt;1&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value&lt;closeparen&gt;&apos;FME_NUM_CONDITIONS3___&quot; SET_TO"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="USER_EXPOSED_ATTRIBUTES" PARM_VALUE="toukinobeyukamenseki"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeManager"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="10"
+#!   TYPE="AttributeKeeper"
+#!   VERSION="3"
+#!   POSITION="726 164.00037500375004"
+#!   BOUNDING_RECT="726 164.00037500375004 454 71"
+#!   ORDER="500000000000011"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23619"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <XFORM_ATTR ATTR_NAME="citygml_measured_height" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="CREATE_BULK_MODE_FEATURES" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="KEEP_ATTRS" PARM_VALUE="citygml_measured_height"/>
+#!     <XFORM_PARM PARM_NAME="KEEP_LIST" PARM_VALUE="uro_building_detail_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_building_detail_attribute_uro_building_structure_type uro_key_value_pair_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_code_value uro_key_value_pair_attribute&lt;opencurly&gt;&lt;closecurly&gt;.uro_key_value_pair_attribute_uro_key"/>
+#!     <XFORM_PARM PARM_NAME="OUTPUT_ON_ATTRIBUTE_CHANGE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeKeeper"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="13"
+#!   TYPE="2DForcer"
+#!   VERSION="0"
+#!   POSITION="2145.9031015310156 182.59121820726409"
+#!   BOUNDING_RECT="2145.9031015310156 182.59121820726409 454 71"
+#!   ORDER="500000000000019"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="23619"
+#! >
+#!     <OUTPUT_FEAT NAME="2D"/>
+#!     <XFORM_ATTR ATTR_NAME="citygml_measured_height" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="kouzou" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="nendai" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key_codeSpace" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="2DForcer"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="12"
+#!   SOURCE_NODE="21"
+#!   TARGET_NODE="10"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="16"
+#!   SOURCE_NODE="10"
+#!   TARGET_NODE="15"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="24"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 2D"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="17"
+#!   SOURCE_NODE="15"
+#!   TARGET_NODE="13"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.30196078431372547,0.30196078431372547,0.30196078431372547,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! <ATTR_LINK
+#!   IDENTIFIER="65560"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="ao 0 6 2D"
+#!   TARGET_PORT_DESC="2"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="262168"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="ao 0 0 2D"
+#!   TARGET_PORT_DESC="0"
+#! />
+#! <ATTR_LINK
+#!   IDENTIFIER="131096"
+#!   SOURCE_NODE="13"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="ao 0 3 2D"
+#!   TARGET_PORT_DESC="1"
+#! />
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 39
+ARCGIS_COMPATIBILITY ARCGIS_AUTO
+GUI IGNORE SourceDataset_CITYGML_2,CITYGML_IN_FME_GROUP_NAMED1_CITYGML_2,CITYGML_IN_USE_CITYGML_SCHEMA_FILES_CITYGML_2,CITYGML_IN_ADE_XSD_DOC_CITYGML_2,CITYGML_IN_VALIDATE_DATASET_CITYGML_2,CITYGML_IN_SKIP_SCHEMA_LOCATION_IN_DATASET_CITYGML_2,CITYGML_IN_ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES_CITYGML_2,CITYGML_IN_MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE_CITYGML_2,CITYGML_IN_FME_GROUP_NAMED3_CITYGML_2,CITYGML_IN_USE_XLINK_HREF_GEOMETRY_TRAITS_CITYGML_2,CITYGML_IN_LODS_TO_READ_CITYGML_2,CITYGML_IN_FME_GROUP_NAMED4_CITYGML_2,CITYGML_IN_SRS_AXIS_ORDER_CITYGML_2,CITYGML_IN_TEXTURE_COORDINATES_ORDER_FIX_CITYGML_2,CITYGML_IN_USE_SEARCH_ENVELOPE_CITYGML_2,CITYGML_IN_SEARCH_ENVELOPE_MINX_CITYGML_2,CITYGML_IN_SEARCH_ENVELOPE_MINY_CITYGML_2,CITYGML_IN_SEARCH_ENVELOPE_MAXX_CITYGML_2,CITYGML_IN_SEARCH_ENVELOPE_MAXY_CITYGML_2,CITYGML_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_CITYGML_2,CITYGML_IN_CLIP_TO_ENVELOPE_CITYGML_2,CITYGML_IN_NETWORK_AUTHENTICATION_CITYGML_2,DestDataset_SHAPEFILE_1,SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_1,SHAPEFILE_OUT_ENCODING_SHAPEFILE_1,SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1,SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1,SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1,SHAPEFILE_OUT_ADVANCED_SHAPEFILE_1,SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1,SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1,SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1,SHAPEFILE_OUT_ENFORCE_ATTRIBUTE_LIMIT_SHAPEFILE_1
+# ============================================================================
+DEFAULT_MACRO DestDataset_SHAPEFILE C:\Users\Administrator
+
+DEFAULT_MACRO SourceDataset_CITYGML C:\Users\Administrator\52341127_bldg_6697.gml
+
+# ============================================================================
+INCLUDE [ if {{$(DestDataset_SHAPEFILE$encode)} == {}} { puts_real {Parameter 'DestDataset_SHAPEFILE' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(SourceDataset_CITYGML$encode)} == {}} { puts_real {Parameter 'SourceDataset_CITYGML' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} CITYGML
+MULTI_READER_KEYWORD{0} CITYGML_2
+MULTI_READER_GEN_DIRECTIVES{0} VERSION,,CITYGML_EXPOSE_FORMAT_ATTRS,,SUPPORTED_READER_ARCHIVE_EXTENSIONS,xml.gz<comma>gml.gz,SEARCH_ENVELOPE_MINY,0,GENERIC_ATTRS_AS_SCHEMA_ATTRS,Yes,TEXTURE_COORDINATES_ORDER_FIX,No,SEARCH_ENVELOPE_MINX,0,GENERIC_ATTRS_AS_FEATURES,No,ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES,No,VALIDATE_DATASET,no,USE_SEARCH_ENVELOPE,NO,ADE_XSD_DOC,C:<backslash>Users<backslash>s-okayama<backslash>Dropbox<space><openparen><u682a><u5f0f><u4f1a><u793e><u30a6><u30a8><u30b9><u30b3><closeparen><backslash><u5ca1><u5c71><u6cb3><u5ddd><u8ab2><backslash>2023_R05<u696d><u52d9><backslash>01_<u7cbe><u7dfb><u306a><u571f><u7802><u707d><u5bb3><u30b7><u30df><u30e5><u30ec><u30fc><u30b7><u30e7><u30f3><backslash>07_<u56fd><u969b><u822a><u696d><backslash>20231027_33211_bizen-shi_city_2023_citygml_1_op<backslash>schemas<backslash>iur<backslash>uro<backslash>3.0<backslash>urbanObject.xsd,USE_XLINK_HREF_GEOMETRY_TRAITS,Yes,ONLY_FEATURE_TYPES_IN_DATASET,YES,MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE,400,MATERIAL_FEATURES,No,SEARCH_ENVELOPE_MAXX,0,EXPOSE_ATTRS_GROUP,,USE_CITYGML_SCHEMA_FILES,Yes,SEARCH_ENVELOPE_MAXY,0,CLIP_TO_ENVELOPE,NO,SEARCH_ENVELOPE_COORDINATE_SYSTEM,,SRS_AXIS_ORDER,2<comma>1<comma>3,LODS_TO_READ,0<space>1<space>2<space>3<space>4,_MERGE_SCHEMAS,YES,SKIP_SCHEMA_LOCATION_IN_DATASET,No
+WRITER_TYPE MULTI_WRITER
+WRITER_KEYWORD PRIMARY_DEST
+PRIMARY_DEST_DATASET_ORDER BY_ID
+PRIMARY_DEST_FIRST_WRITER_ID 0
+PRIMARY_DEST_TYPE{0} SHAPEFILE
+PRIMARY_DEST_KEYWORD{0} SHAPEFILE_1
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "CITYGML_2"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CITYGML CITYGML_2
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_CITYGML_2 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER CITYGML CITYGML_2
+DEFAULT_MACRO SourceDataset_CITYGML_2 $(SourceDataset_CITYGML)
+GUI MULTIFILE SourceDataset_CITYGML_2 CityGML_Files(*.gml;*.xml;*.gz)|*.gml;*.xml;*.gz|CityGML_Files(*.gml)|*.gml|CityGML_Files(*.xml)|*.xml|Compressed_CityGML_Files(*.gz)|*.gz|All_Files(*)|* Source CityGML File(s):
+DEFAULT_MACRO CITYGML_IN_SUPPORTED_READER_ARCHIVE_EXTENSIONS_CITYGML_2 xml.gz,gml.gz
+CITYGML_2_SUPPORTED_READER_ARCHIVE_EXTENSIONS "$(CITYGML_IN_SUPPORTED_READER_ARCHIVE_EXTENSIONS_CITYGML_2)"
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_FME_GROUP_NAMED1_CITYGML_2 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CITYGML_IN_FME_GROUP_NAMED1_CITYGML_2 CITYGML_IN_USE_CITYGML_SCHEMA_FILES_CITYGML_2%CITYGML_IN_ADE_XSD_DOC_CITYGML_2%CITYGML_IN_VALIDATE_DATASET_CITYGML_2%CITYGML_IN_SKIP_SCHEMA_LOCATION_IN_DATASET_CITYGML_2%CITYGML_IN_ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES_CITYGML_2%CITYGML_IN_VERSION%CITYGML_IN_MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE_CITYGML_2 CityGML Schema Options
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_USE_CITYGML_SCHEMA_FILES_CITYGML_2 Yes
+CITYGML_2_USE_CITYGML_SCHEMA_FILES "$(CITYGML_IN_USE_CITYGML_SCHEMA_FILES_CITYGML_2)"
+GUI LOOKUP_CHOICE CITYGML_IN_USE_CITYGML_SCHEMA_FILES_CITYGML_2 "\"Yes (Recommended)\",Yes"%"\"No (Deprecated - Backward-compatible)\",No" Reader Driven by CityGML Schema:
+# ============================================================================
+# The ADE_XSD_DOC keyword overwrites the location of the XML Schema document that
+# is specified in the xsi:schemaLocation of the XML dataset.
+DEFAULT_MACRO CITYGML_IN_ADE_XSD_DOC_CITYGML_2 C:\Users\s-okayama\株式会社ウエスコ Dropbox\岡山河川課\2023_R05業務\01_精緻な土砂災害シミュレーション\07_国際航業\20231109_33211_bizen-shi_city_2023_citygml_1\schemas\iur\uro\3.0\urbanObject.xsd
+CITYGML_2_ADE_XSD_DOC "$(CITYGML_IN_ADE_XSD_DOC_CITYGML_2)"
+GUI OPTIONAL MULTIFILE CITYGML_IN_ADE_XSD_DOC_CITYGML_2 ADE_Schema_Files(*.xsd)|*.xsd|All_Files(*)|* Additional ADE Schema File(s):
+# ============================================================================
+# This specifies whether the XML dataset should be validated against its
+# DTD file. If set to 'auto', the XML document will only be validated if
+# its DTD file is available.
+DEFAULT_MACRO CITYGML_IN_VALIDATE_DATASET_CITYGML_2 no
+CITYGML_2_VALIDATE_DATASET "$(CITYGML_IN_VALIDATE_DATASET_CITYGML_2)"
+GUI CHOICE CITYGML_IN_VALIDATE_DATASET_CITYGML_2 yes%no Validate CityGML Dataset File:
+# ============================================================================
+# The ADE_XSD_DOC keyword overwrites the location of the XML Schema document that
+# is specified in the xsi:schemaLocation of the XML dataset.
+DEFAULT_MACRO CITYGML_IN_SKIP_SCHEMA_LOCATION_IN_DATASET_CITYGML_2 No
+CITYGML_2_SKIP_SCHEMA_LOCATION_IN_DATASET "$(CITYGML_IN_SKIP_SCHEMA_LOCATION_IN_DATASET_CITYGML_2)"
+GUI CHOICE CITYGML_IN_SKIP_SCHEMA_LOCATION_IN_DATASET_CITYGML_2 Yes%No Ignore xsi:schemaLocation in Dataset:
+DEFAULT_MACRO CITYGML_IN_ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES_CITYGML_2 No
+CITYGML_2_ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES "$(CITYGML_IN_ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES_CITYGML_2)"
+GUI CHOICE CITYGML_IN_ADD_NAMESPACE_PREFIX_TO_FEATURE_TYPES_CITYGML_2 Yes%No Add XML Namespace Prefix to Feature Types:
+# ============================================================================
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE_CITYGML_2 400
+CITYGML_2_MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE "$(CITYGML_IN_MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE_CITYGML_2)"
+GUI OPTIONAL INTEGER CITYGML_IN_MAX_ATTRIBUTES_PER_NESTED_ATTRIBUTE_CITYGML_2 Max Atttributes Per Nested Attribute
+# ============================================================================
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_ONLY_FEATURE_TYPES_IN_DATASET_CITYGML_2 YES
+CITYGML_2_ONLY_FEATURE_TYPES_IN_DATASET "$(CITYGML_IN_ONLY_FEATURE_TYPES_IN_DATASET_CITYGML_2)"
+# ============================================================================
+# Allow the user to choose if GenericAttribute should be included as Feature types
+DEFAULT_MACRO CITYGML_IN_GENERIC_ATTRS_AS_FEATURES_CITYGML_2 No
+CITYGML_2_GENERIC_ATTRS_AS_FEATURES "$(CITYGML_IN_GENERIC_ATTRS_AS_FEATURES_CITYGML_2)"
+# ============================================================================
+# Allow the user to choose if X3DMaterials and ParameterizedTextures should be included as Feature types
+# The default is No.
+DEFAULT_MACRO CITYGML_IN_MATERIAL_FEATURES_CITYGML_2 No
+CITYGML_2_MATERIAL_FEATURES "$(CITYGML_IN_MATERIAL_FEATURES_CITYGML_2)"
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_GENERIC_ATTRS_AS_SCHEMA_ATTRS_CITYGML_2 Yes
+CITYGML_2_GENERIC_ATTRS_AS_SCHEMA_ATTRS "$(CITYGML_IN_GENERIC_ATTRS_AS_SCHEMA_ATTRS_CITYGML_2)"
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_FME_GROUP_NAMED3_CITYGML_2 FME_DISCLOSURE_OPEN
+GUI OPTIONAL DISCLOSUREGROUP CITYGML_IN_FME_GROUP_NAMED3_CITYGML_2 CITYGML_IN_USE_XLINK_HREF_GEOMETRY_TRAITS_CITYGML_2%CITYGML_IN_LODS_TO_READ_CITYGML_2 CityGML Options
+DEFAULT_MACRO CITYGML_IN_USE_XLINK_HREF_GEOMETRY_TRAITS_CITYGML_2 Yes
+CITYGML_2_USE_XLINK_HREF_GEOMETRY_TRAITS "$(CITYGML_IN_USE_XLINK_HREF_GEOMETRY_TRAITS_CITYGML_2)"
+GUI CHOICE CITYGML_IN_USE_XLINK_HREF_GEOMETRY_TRAITS_CITYGML_2 Yes%No Add xlink_href Traits from Geometry References:
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_LODS_TO_READ_CITYGML_2 0
+CITYGML_2_LODS_TO_READ "$(CITYGML_IN_LODS_TO_READ_CITYGML_2)"
+GUI OPTIONAL LOOKUP_LISTBOX CITYGML_IN_LODS_TO_READ_CITYGML_2 "\"LOD 0\",0"%"\"LOD 1\",1"%"\"LOD 2\",2"%"\"LOD 3\",3"%"\"LOD 4\",4" LODs to Read:
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_FME_GROUP_NAMED4_CITYGML_2 
+GUI OPTIONAL DISCLOSUREGROUP CITYGML_IN_FME_GROUP_NAMED4_CITYGML_2 CITYGML_IN_SRS_AXIS_ORDER_CITYGML_2%CITYGML_IN_TEXTURE_COORDINATES_ORDER_FIX_CITYGML_2 SRS Parameters
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_SRS_AXIS_ORDER_CITYGML_2 2,1,3
+CITYGML_2_SRS_AXIS_ORDER "$(CITYGML_IN_SRS_AXIS_ORDER_CITYGML_2)"
+GUI OPTIONAL CHOICE CITYGML_IN_SRS_AXIS_ORDER_CITYGML_2 1,2%2,1%1,2,3%2,1,3 GML SRS Axis Order:
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_TEXTURE_COORDINATES_ORDER_FIX_CITYGML_2 No
+CITYGML_2_TEXTURE_COORDINATES_ORDER_FIX "$(CITYGML_IN_TEXTURE_COORDINATES_ORDER_FIX_CITYGML_2)"
+GUI LOOKUP_CHOICE CITYGML_IN_TEXTURE_COORDINATES_ORDER_FIX_CITYGML_2 "\"No (Recommended)\",No"%"\"Yes (Deprecated - Backward-compatible)\",Yes" Texture Coordinate Order to follow SRS Axis Order:
+DEFAULT_MACRO CITYGML_IN_EXPOSE_ATTRS_GROUP_CITYGML_2 
+CITYGML_2_EXPOSE_ATTRS_GROUP "$(CITYGML_IN_EXPOSE_ATTRS_GROUP_CITYGML_2)"
+# Include this file in source setting section to add external search envelope processing
+# Zero as a default means we don't do any search -- this makes workbench happier
+DEFAULT_MACRO CITYGML_IN_USE_SEARCH_ENVELOPE_CITYGML_2 NO
+CITYGML_2_USE_SEARCH_ENVELOPE "$(CITYGML_IN_USE_SEARCH_ENVELOPE_CITYGML_2)"
+GUI ACTIVEDISCLOSUREGROUP CITYGML_IN_USE_SEARCH_ENVELOPE_CITYGML_2 CITYGML_IN_SEARCH_ENVELOPE_MINX_CITYGML_2%CITYGML_IN_SEARCH_ENVELOPE_MINY_CITYGML_2%CITYGML_IN_SEARCH_ENVELOPE_MAXX_CITYGML_2%CITYGML_IN_SEARCH_ENVELOPE_MAXY_CITYGML_2%CITYGML_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_CITYGML_2%CITYGML_IN_CLIP_TO_ENVELOPE_CITYGML_2%CITYGML_IN_SEARCH_METHOD%CITYGML_IN_SEARCH_METHOD_FILTER%CITYGML_IN_SEARCH_ORDER%CITYGML_IN_SEARCH_FEATURE%CITYGML_IN_DUMMY_SEARCH_ENVELOPE_PARAMETER Use Search Envelope
+# ===========================================================================
+GUI LOOKUP CITYGML_IN_SEARCH_ENVELOPE_MINX_CITYGML_2 <Unused>,0 
+DEFAULT_MACRO CITYGML_IN_SEARCH_ENVELOPE_MINX_CITYGML_2 0
+CITYGML_2_SEARCH_ENVELOPE "$(CITYGML_IN_SEARCH_ENVELOPE_MINX_CITYGML_2)"
+GUI OPTIONAL FLOAT CITYGML_IN_SEARCH_ENVELOPE_MINX_CITYGML_2 Minimum X:
+# ===========================================================================
+GUI LOOKUP CITYGML_IN_SEARCH_ENVELOPE_MINY_CITYGML_2 <Unused>,0 
+DEFAULT_MACRO CITYGML_IN_SEARCH_ENVELOPE_MINY_CITYGML_2 0
+CITYGML_2_SEARCH_ENVELOPE "$(CITYGML_IN_SEARCH_ENVELOPE_MINY_CITYGML_2)"
+GUI OPTIONAL FLOAT CITYGML_IN_SEARCH_ENVELOPE_MINY_CITYGML_2 Minimum Y:
+# ===========================================================================
+GUI LOOKUP CITYGML_IN_SEARCH_ENVELOPE_MAXX_CITYGML_2 <Unused>,0 
+DEFAULT_MACRO CITYGML_IN_SEARCH_ENVELOPE_MAXX_CITYGML_2 0
+CITYGML_2_SEARCH_ENVELOPE "$(CITYGML_IN_SEARCH_ENVELOPE_MAXX_CITYGML_2)"
+GUI OPTIONAL FLOAT CITYGML_IN_SEARCH_ENVELOPE_MAXX_CITYGML_2 Maximum X:
+# ===========================================================================
+GUI LOOKUP CITYGML_IN_SEARCH_ENVELOPE_MAXY_CITYGML_2 <Unused>,0 
+DEFAULT_MACRO CITYGML_IN_SEARCH_ENVELOPE_MAXY_CITYGML_2 0
+CITYGML_2_SEARCH_ENVELOPE "$(CITYGML_IN_SEARCH_ENVELOPE_MAXY_CITYGML_2)"
+GUI OPTIONAL FLOAT CITYGML_IN_SEARCH_ENVELOPE_MAXY_CITYGML_2 Maximum Y:
+# ===========================================================================
+GUI LOOKUP CITYGML_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_CITYGML_2 <Unused>, 
+DEFAULT_MACRO CITYGML_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_CITYGML_2 
+CITYGML_2_SEARCH_ENVELOPE "$(CITYGML_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_CITYGML_2)"
+GUI OPTIONAL COORDSYS CITYGML_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_CITYGML_2 Search Envelope Coordinate System:
+# ===========================================================================
+# BUG18999: We now have a soft clip to fall back on like native spatial index
+# thus we are reintroducing the clip to envelop as an option for users.
+# Defualt to soft clip as per the existing database readers we are emulating
+GUI LOOKUP CITYGML_IN_CLIP_TO_ENVELOPE_CITYGML_2 <Unused>,NO 
+DEFAULT_MACRO CITYGML_IN_CLIP_TO_ENVELOPE_CITYGML_2 NO
+CITYGML_2_CLIP_TO_ENVELOPE "$(CITYGML_IN_CLIP_TO_ENVELOPE_CITYGML_2)"
+GUI OPTIONAL CHECKBOX CITYGML_IN_CLIP_TO_ENVELOPE_CITYGML_2 YES%NO Clip to Search Envelope
+# ===========================================================================
+DEFAULT_MACRO CITYGML_IN_NETWORK_AUTHENTICATION_CITYGML_2 
+CITYGML_2_NETWORK_AUTHENTICATION "$(CITYGML_IN_NETWORK_AUTHENTICATION_CITYGML_2)"
+GUI OPTIONAL AUTHENTICATOR CITYGML_IN_NETWORK_AUTHENTICATION_CITYGML_2 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================
+DEFAULT_MACRO CITYGML_IN_ATTRIBUTE_READING_CITYGML_2 ALL
+CITYGML_2_ATTRIBUTE_READING "$(CITYGML_IN_ATTRIBUTE_READING_CITYGML_2)"
+# ============================================================================
+CITYGML_2_GENERATE_FME_BUILD_NUM 23619
+CITYGML_2_DATASET "$(SourceDataset_CITYGML_2)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "SHAPEFILE_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_1
+# ============================================================================
+# The following GUI line prompts for a folder to be used as the
+# the destination for the Esri Shapefiles.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be written.
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_SHAPEFILE_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER SHAPEFILE SHAPEFILE_1
+DEFAULT_MACRO DestDataset_SHAPEFILE_1 $(DestDataset_SHAPEFILE)
+GUI DIRNAME DestDataset_SHAPEFILE_1 Destination Esri Shapefile Folder:
+SHAPEFILE_1_COORDINATE_SYSTEM_GRANULARITY FEATURE_TYPE
+DEFAULT_MACRO SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_1 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_WRITER_PARAMS_SHAPEFILE_1 SHAPEFILE_OUT_ENCODING_SHAPEFILE_1%SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1%SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1%SHAPEFILE_OUT_DIMENSION%SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1 Writer Parameters
+# ============================================================================
+# The following keyword allows the user to choose what encoding to
+# use for outputting the shapefile
+DEFAULT_MACRO SHAPEFILE_OUT_ENCODING_SHAPEFILE_1 utf-8
+SHAPEFILE_1_ENCODING "$(SHAPEFILE_OUT_ENCODING_SHAPEFILE_1)"
+GUI STRING_OR_ENCODING SHAPEFILE_OUT_ENCODING_SHAPEFILE_1 fme-system%* Character Encoding
+# ============================================================================
+# Specifies whether or not the reader will generate spatial index files
+DEFAULT_MACRO SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1 NONE
+SHAPEFILE_1_SPATIAL_INDEXES "$(SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SPATIAL_INDEXES_SHAPEFILE_1 None,NONE%"\"ArcGIS Compatible Spatial Index (.sbn)\",SBN"%"\"QGIS and MapServer Spatial Index (.qix)\",QIX"%"\"Both ArcGIS and QGIS/MapServer Compatible (.sbn<space>and<space>.qix)\",BOTH" Create Spatial Index:
+DEFAULT_MACRO SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1 No
+SHAPEFILE_1_COMPRESSED_FILE "$(SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_COMPRESSED_FILE_SHAPEFILE_1 Yes%No Create Compressed Shapefile (.shz)
+DEFAULT_MACRO SHAPEFILE_OUT_DIMENSION_SHAPEFILE_1 AUTO
+SHAPEFILE_1_DIMENSION "$(SHAPEFILE_OUT_DIMENSION_SHAPEFILE_1)"
+DEFAULT_MACRO SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1 TIMESTAMP_STRING
+SHAPEFILE_1_DATETIME_STORAGE "$(SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_DATETIME_STORAGE_SHAPEFILE_1 "\"As String <openparen>FME Datetime Format<closeparen>\",TIMESTAMP_STRING"%"\"Date <openparen>YYYYMMDD only<closeparen>\",DATE_ONLY" Datetime Type Storage
+DEFAULT_MACRO SHAPEFILE_OUT_ADVANCED_SHAPEFILE_1 
+GUI OPTIONAL DISCLOSUREGROUP SHAPEFILE_OUT_ADVANCED_SHAPEFILE_1 SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1%SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1%SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1%SHAPEFILE_OUT_ENFORCE_ATTRIBUTE_LIMIT_SHAPEFILE_1 Advanced
+DEFAULT_MACRO SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1 PATCH
+SHAPEFILE_1_SURFACE_SOLID_STORAGE "$(SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1)"
+GUI LOOKUP_CHOICE SHAPEFILE_OUT_SURFACE_SOLID_STORAGE_SHAPEFILE_1 Multipatch,PATCH%Polygon,POLYGON Surface and Solid Storage
+# ============================================================================
+# The following GUI line sets whether measure values in the shapefiles should
+# be treated as elevations.
+DEFAULT_MACRO SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1 No
+SHAPEFILE_1_MEASURES_AS_Z "$(SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1)"
+GUI CHOICE SHAPEFILE_OUT_MEASURES_AS_Z_SHAPEFILE_1 Yes%No Treat Elevation as Measures
+DEFAULT_MACRO SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1 Yes
+SHAPEFILE_1_DATASET_SPLITTING "$(SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1)"
+GUI OPTIONAL CHECKBOX SHAPEFILE_OUT_DATASET_SPLITTING_SHAPEFILE_1 Yes%No Split Dataset into 2GB Files
+DEFAULT_MACRO SHAPEFILE_OUT_ENFORCE_ATTRIBUTE_LIMIT_SHAPEFILE_1 No
+SHAPEFILE_1_ENFORCE_ATTRIBUTE_LIMIT "$(SHAPEFILE_OUT_ENFORCE_ATTRIBUTE_LIMIT_SHAPEFILE_1)"
+GUI CHOICE SHAPEFILE_OUT_ENFORCE_ATTRIBUTE_LIMIT_SHAPEFILE_1 Yes%No Enforce Number of Attributes Limit
+# ============================================================================
+# Opt in for destination dataset type vs format type validation
+DEFAULT_MACRO SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_1 Yes
+SHAPEFILE_1_DESTINATION_DATASETTYPE_VALIDATION "$(SHAPEFILE_OUT_DESTINATION_DATASETTYPE_VALIDATION_SHAPEFILE_1)"
+DEFAULT_MACRO SHAPEFILE_OUT_REQUIRE_FIRST_ATTRNAME_ALPHA_SHAPEFILE_1 Yes
+SHAPEFILE_1_REQUIRE_FIRST_ATTRNAME_ALPHA "$(SHAPEFILE_OUT_REQUIRE_FIRST_ATTRNAME_ALPHA_SHAPEFILE_1)"
+# ============================================================================
+SHAPEFILE_1_GENERATE_FME_BUILD_NUM 22627
+SHAPEFILE_1_ENCODING $(SHAPEFILE_OUT_ENCODING_SHAPEFILE_1)
+SHAPEFILE_1_DATASET "$(DestDataset_SHAPEFILE_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)建築物LOD1データ→シェープファイルの変換.log"
+LOG_APPEND NO
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+FME_NAMES_ENCODING UTF-8
+FME_BULK_MODE_THRESHOLD 2000
+LAST_SAVE_BUILD "FME 2023.1.0.0 (20230825 - Build 23619 - WIN64)"
+DEFAULT_MACRO DATASET_KEYWORD_CITYGML_2 CITYGML_2
+DEFAULT_MACRO DATASET_KEYWORD_SHAPEFILE_1 SHAPEFILE_1
+# -------------------------------------------------------------------------
+
+CITYGML_2_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+SHAPEFILE_1_COORDINATE_SYSTEM JGD2011-05_FME
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME 建築物LOD1データ→シェープファイルの変換
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+CITYGML_2_DEF Building   citygml_target_uri           xml_buffer   citygml_feature_role         xml_buffer   citygml_feature_role_attr_name xml_buffer   citygml_feature_role_attr_val xml_buffer   gml_description              xml_buffer   gml_name                     xml_buffer   citygml_creationDate         xml_date   citygml_terminationDate      xml_date   externalReference{}.externalObject.name xml_xml   externalReference{}.externalObject.uri xml_xml   externalReference{}.informationSystem xml_xml   citygml_generalizes_to{}.xlink_href xml_buffer   citygml_relative_to_terrain  xml_char(33)   citygml_relative_to_water    xml_char(38)   citygml_class                xml_buffer   citygml_class_codeSpace      xml_buffer   citygml_function{}           xml_buffer   citygml_function{}.codeSpace xml_buffer   citygml_usage{}              xml_buffer   citygml_usage{}.codeSpace    xml_buffer   citygml_year_of_construction xml_buffer   citygml_year_of_demolition   xml_buffer   citygml_roof_type            xml_buffer   citygml_roof_type_codeSpace  xml_buffer   citygml_measured_height      xml_real64   citygml_measured_height_units xml_buffer   citygml_storeys_above_ground xml_uint64   citygml_storeys_below_ground xml_uint64   citygml_storey_heights_above_ground xml_buffer   citygml_storey_heights_above_ground_units xml_buffer   citygml_storey_heights_below_ground xml_buffer   citygml_storey_heights_below_ground_units xml_buffer   citygml_outer_building_installation{}.xlink_href xml_buffer   citygml_interior_building_installation{}.xlink_href xml_buffer   citygml_bounded_by{}.xlink_href xml_buffer   citygml_level_of_detail{}    xml_buffer   citygml_interior_room{}.xlink_href xml_buffer   citygml_consists_of_building_part{}.xlink_href xml_buffer   citygml_address{}.xlink_href xml_buffer   uro_bldg_facility_attribute{} xml_xml   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_id xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_part_id xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_branch_id xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_prefecture{} xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_prefecture{}.codeSpace xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_city{} xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_city{}.codeSpace xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_route xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_start_post xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_end_post xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_start_lat xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_start_long xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_alternative_name{} xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_river_code xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_river_code_codeSpace xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_river_name xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_side_type xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_side_type_codeSpace xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_post xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_post_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_distance xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_distance_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_post xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_post_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_distance xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_distance_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_post xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_post_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_distance xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_start_distance_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_end_post xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_left_end_post_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_lef_end_distance xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_lef_end_distance_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_post xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_post_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_distance xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_start_distance_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_post xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_post_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_distance xml_real64   uro_bldg_facility_id_attribute{}.uro_river_facility_id_attribute_uro_right_end_distance_units xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_id xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_part_id xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_branch_id xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_prefecture{} xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_prefecture{}.codeSpace xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_city{} xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_city{}.codeSpace xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_route xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_start_post xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_end_post xml_buffer   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_start_lat xml_real64   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_start_long xml_real64   uro_bldg_facility_id_attribute{}.uro_facility_id_attribute_uro_alternative_name{} xml_buffer   uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_class xml_buffer   uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_class_codeSpace xml_buffer   uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_function{} xml_buffer   uro_bldg_facility_type_attribute{}.uro_facility_type_attribute_uro_function{}.codeSpace xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_src_scale{} xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_src_scale{}.codeSpace xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_geometry_src_desc{} xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_geometry_src_desc{}.codeSpace xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_thematic_src_desc{} xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_thematic_src_desc{}.codeSpace xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_appearance_src_desc{} xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_appearance_src_desc{}.codeSpace xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_lod1_height_type xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_lod1_height_type_codeSpace xml_buffer   uro_building_data_quality_attribute{}.uro_building_data_quality_attribute_uro_lod_type{} xml_char(3)   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_serial_number_of_building_certification xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_site_area xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_site_area_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_total_floor_area xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_total_floor_area_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_footprint_area xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_footprint_area_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_roof_edge_area xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_roof_edge_area_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_development_area xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_development_area_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_type_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_org_type xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_structure_org_type_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_fireproof_structure_type xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_fireproof_structure_type_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_implementing_body xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_urban_plan_type xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_urban_plan_type_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_area_classification_type xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_area_classification_type_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_districts_and_zones_type{} xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_districts_and_zones_type{}.codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_land_use_type xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_land_use_type_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_reference xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage2 xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_major_usage2_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage2 xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_org_usage2_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage2 xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage2_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage3 xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_detailed_usage3_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_ground_floor_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_ground_floor_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_second_floor_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_second_floor_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_third_floor_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_third_floor_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_first_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_first_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_second_usage xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_basement_second_usage_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_vacancy xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_vacancy_codeSpace xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_coverage_rate xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_floor_area_rate xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_specified_building_coverage_rate xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_specified_floor_area_rate xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_standard_floor_area_rate xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_height xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_building_height_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_eave_height xml_real64   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_eave_height_units xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_note xml_buffer   uro_building_detail_attribute{}.uro_building_detail_attribute_uro_survey_year xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_description xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_description_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank_org xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_rank_org_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_depth xml_real64   uro_building_disaster_risk_attribute{}.uro_building_high_tide_risk_attribute_uro_depth_units xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_description xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_description_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank_org xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_rank_org_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_depth xml_real64   uro_building_disaster_risk_attribute{}.uro_building_inland_flooding_risk_attribute_uro_depth_units xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_description xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_description_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_area_type xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_land_slide_risk_attribute_uro_area_type_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_description xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_description_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank_org xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_rank_org_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_depth xml_real64   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_depth_units xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_admin_type xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_admin_type_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_scale xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_scale_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_duration xml_real64   uro_building_disaster_risk_attribute{}.uro_building_river_flooding_risk_attribute_uro_duration_units xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_description xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_description_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank_org xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_rank_org_codeSpace xml_buffer   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_depth xml_real64   uro_building_disaster_risk_attribute{}.uro_building_tsunami_risk_attribute_uro_depth_units xml_buffer   uro_building_idattribute{}.uro_building_idattribute_uro_building_id xml_buffer   uro_building_idattribute{}.uro_building_idattribute_uro_branch_id xml_int64   uro_building_idattribute{}.uro_building_idattribute_uro_part_id xml_int64   uro_building_idattribute{}.uro_building_idattribute_uro_prefecture xml_buffer   uro_building_idattribute{}.uro_building_idattribute_uro_prefecture_codeSpace xml_buffer   uro_building_idattribute{}.uro_building_idattribute_uro_city xml_buffer   uro_building_idattribute{}.uro_building_idattribute_uro_city_codeSpace xml_buffer   uro_ifc_building_attribute{} xml_xml   uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_weekday_hours xml_buffer   uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_weekend_hours xml_buffer   uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_phone xml_buffer   uro_indoor_building_attribute{}.uro_indoor_facility_attribute_uro_website xml_buffer   uro_indoor_building_attribute{}.uro_indoor_furnishing_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_furnishing_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_furnishing_attribute_uro_floor_id xml_buffer   uro_indoor_building_attribute{}.uro_indoor_public_tag_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_public_tag_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_public_tag_attribute_uro_ucode xml_buffer   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_floor_id xml_buffer   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_is_restricted xml_boolean   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_suite xml_buffer   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_is_public xml_boolean   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_toll_type xml_buffer   uro_indoor_building_attribute{}.uro_indoor_space_attribute_uro_toll_type_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_category xml_boolean   uro_indoor_building_attribute{}.uro_indoor_storey_attribute_uro_ordinal xml_real64   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_start_node xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_end_node xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_category xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_category_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_roof xml_buffer   uro_indoor_building_attribute{}.uro_indoor_tacatile_tile_attribute_uro_floor_id xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_name xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_string_value xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_int_value xml_int64   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_double_value xml_real64   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_code_value xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_code_value_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_date_value xml_date   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_uri_value xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_measured_value xml_real64   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_nominal_value_uro_user_defined_value_uro_measured_value_units xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_description xml_buffer   uro_indoor_building_attribute{}.uro_indoor_user_defined_attribute_uro_unit xml_buffer   uro_indoor_building_attribute{}.uro_indoor_zone_attribute_uro_source xml_buffer   uro_indoor_building_attribute{}.uro_indoor_zone_attribute_uro_source_codeSpace xml_buffer   uro_indoor_building_attribute{}.uro_indoor_zone_attribute_uro_floor_id xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_key_codeSpace xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_code_value_codeSpace xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_string_value xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_int_value xml_int64   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_double_value xml_real64   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_measured_value xml_real64   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_measured_value_units xml_buffer   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_date_value xml_date   uro_key_value_pair_attribute{}.uro_key_value_pair_attribute_uro_uri_value xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_class xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_class_codeSpace xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_name xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_capacity xml_int64   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_owner xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_floor_area xml_real64   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_floor_area_units xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_store_floor_area xml_real64   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_total_store_floor_area_units xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_inaugural_date xml_date   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_year_opened xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_year_closed xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_key_tenants xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_availability xml_boolean   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_urban_plan_type xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_urban_plan_type_codeSpace xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_area_classification_type xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_area_classification_type_codeSpace xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_districts_and_zones_type{} xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_districts_and_zones_type{}.codeSpace xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_land_use_type xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_land_use_type_codeSpace xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_reference xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_note xml_buffer   uro_large_customer_facility_attribute{}.uro_large_customer_facility_attribute_uro_survey_year xml_buffer
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   MULTI_READER_KEYWORD $(DATASET_KEYWORD_CITYGML_2)   INPUT FEATURE_TYPE *    ROUTE CITYGML CITYGML_2::Building multi_reader_keyword,$(DATASET_KEYWORD_CITYGML_2) TO FME_GENERIC ::Building ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+CITYGML_2_MERGE_DEF CITYGML_2::Building EXACT Building
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "Building_CITYGML_2 Splitter"    INPUT FEATURE_TYPE Building    OUTPUT FEATURE_TYPE Building_CITYGML_2
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttributeKeeperFactory    FACTORY_NAME { AttributeKeeper }    INPUT  FEATURE_TYPE Building_CITYGML_2    KEEP_ATTRS { citygml_measured_height }    KEEP_LISTS { uro_building_detail_attribute<opencurly><closecurly>.uro_building_detail_attribute_uro_building_structure_type uro_key_value_pair_attribute<opencurly><closecurly>.uro_key_value_pair_attribute_uro_code_value uro_key_value_pair_attribute<opencurly><closecurly>.uro_key_value_pair_attribute_uro_key }    KEEP_FME_ATTRIBUTES Yes    BUILD_FEATURE_TABLES { NO }    OUTPUT_ON_ATTRIBUTE_CHANGE { <Unused> }    OUTPUT { OUTPUT FEATURE_TYPE AttributeKeeper_OUTPUT        }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    COMMAND_PARM_EVALUATION SINGLE_PASS    FACTORY_NAME { AttributeManager }    INPUT  FEATURE_TYPE AttributeKeeper_OUTPUT    MULTI_FEATURE_MODE { NO }    NULL_ATTR_MODE { NO_OP }    ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV    ACTION_COLUMN 3    DEF_VAL_COLUMN 2    MISSING_INPUT_ATTR_HANDLING RENAME_SET_VALUE REMOVE    ATTR_ACTION { "" "kouzou" "<at>Value<openparen>uro_building_detail_attribute<opencurly>0<closecurly>.uro_building_detail_attribute_uro_building_structure_type<closeparen>" "SET_TO" }      ATTR_ACTION { "" "nendai" "FME_CONDITIONAL:DEFAULT_VALUE'_FME_NO_OP_'BOOL_OP;OR;COMPOSITE_TEST;1;TEST <at>Value<openparen>uro_key_value_pair_attribute<opencurly>0<closecurly>.uro_key_value_pair_attribute_uro_key<closeparen> = 100'<at>Value<openparen>uro_key_value_pair_attribute<opencurly>0<closecurly>.uro_key_value_pair_attribute_uro_code_value<closeparen>'BOOL_OP;OR;COMPOSITE_TEST;1;TEST <at>Value<openparen>uro_key_value_pair_attribute<opencurly>1<closecurly>.uro_key_value_pair_attribute_uro_key<closeparen> = 100'<at>Value<openparen>uro_key_value_pair_attribute<opencurly>1<closecurly>.uro_key_value_pair_attribute_uro_code_value<closeparen>'FME_NUM_CONDITIONS3___" "SET_TO" }    OUTPUT { OUTPUT FEATURE_TYPE AttributeManager_OUTPUT        }
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} TeeFactory    FACTORY_NAME { 2DForcer }    INPUT  FEATURE_TYPE AttributeManager_OUTPUT    OUTPUT { FEATURE_TYPE 2DForcer_2D         @Dimension(2)          }
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC 2DForcer_2D TO SHAPEFILE __GO_TO_FINAL_OUTPUT_ROUTER__ <at>CopyAttributes<openparen>ENCODED<comma>height<comma>citygml_measured_height<closeparen>,multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>Building<closeparen> COORDINATE_SYSTEM JGD2011-05_FME GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+
+# -------------------------------------------------------------------------
+SHAPEFILE_1_DEF Building   shapefile_type               shapefile_first_feature   shape_dimension              AUTO   height                       float   kouzou                       number(254,10)   nendai                       number(254,10)

@@ -1,0 +1,415 @@
+{
+  "source_base_path": "D:/projects/FTA3152_PlateauDebrisFlow/24_doc/Building-collapse-detector/gh-pages/markdown",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/bldgCollapseSimuHowTo.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/bldgCollapseSimuHowTo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/customizeModule.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/customizeModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/originalSimuHowTo.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/originalSimuHowTo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html"
+        },
+        ".json": {
+          "relative_path": "manual/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/bldgCollapseSimuHowTo/capture01.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/bldgCollapseSimuHowTo/capture01.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/bldgCollapseSimuHowTo/capture_gui_title.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/bldgCollapseSimuHowTo/capture_gui_title.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/bldgCollapseSimuHowTo/capture_result.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/bldgCollapseSimuHowTo/capture_result.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/bldgCollapseSimuHowTo/morpho2DH_PK12.zip",
+      "output": {
+        "resource": {
+          "relative_path": "resources/bldgCollapseSimuHowTo/morpho2DH_PK12.zip"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/customizeModule/logic.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/customizeModule/logic.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/customizeModule/morpho2DHSolver.zip",
+      "output": {
+        "resource": {
+          "relative_path": "resources/customizeModule/morpho2DHSolver.zip"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/01_FMEによるCityGMLデータの変換方法.pdf",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/01_FMEによるCityGMLデータの変換方法.pdf"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/01_iRICのフォルダ.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/01_iRICのフォルダ.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/01_地形LOD1データの変換.fmw",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/01_地形LOD1データの変換.fmw"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/02_iRICスタートページ.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/02_iRICスタートページ.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/02_建築物LOD1データの変換.fmw",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/02_建築物LOD1データの変換.fmw"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/02_浸食深さの設定方法.pdf",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/02_浸食深さの設定方法.pdf"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/03_土石流シミュレーションのフロー.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/03_土石流シミュレーションのフロー.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/03_現地調査による平均粒径の設定方法.pdf",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/03_現地調査による平均粒径の設定方法.pdf"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/04_DEMデータの読み込み.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/04_DEMデータの読み込み.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/05_建物の読み込み.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/05_建物の読み込み.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/06_格子生成.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/06_格子生成.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/07_斜面崩壊箇所.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/07_斜面崩壊箇所.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/08_斜面崩壊箇所_主渓流.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/08_斜面崩壊箇所_主渓流.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/09_参照情報の読み込み.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/09_参照情報の読み込み.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/10_計算条件の設定.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/10_計算条件の設定.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/11_計算の種類とデータ.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/11_計算の種類とデータ.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/12_土石流の諸元.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/12_土石流の諸元.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/13_河床材料.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/13_河床材料.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/14_建物破壊.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/14_建物破壊.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/15_計算の実行.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/15_計算の実行.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/16_計算実行画面.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/16_計算実行画面.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/17_参照情報・Depthmaxの表示.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/17_参照情報・Depthmaxの表示.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/18_建物の倒壊判定の表示.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/18_建物の倒壊判定の表示.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/19_エクスポート.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/19_エクスポート.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/originalSimuHowTo/土石流シミュレーションのフロー.pptx",
+      "output": {
+        "resource": {
+          "relative_path": "resources/originalSimuHowTo/土石流シミュレーションのフロー.pptx"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/screenshot_01.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "resources/screenshot_01.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

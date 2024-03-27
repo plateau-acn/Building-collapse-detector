@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>3. 家屋倒壊判定モジュールのカスタマイズ方法 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="3. 家屋倒壊判定モジュールのカスタマイズ方法 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="3-家屋倒壊判定モジュールのカスタマイズ方法">3. 家屋倒壊判定モジュールのカスタマイズ方法</h1>
+
+<h1 id="ビルドに必要な環境">ビルドに必要な環境</h1>
+<h2 id="コンパイラ">コンパイラ</h2>
+<p>作業の前に事前にインストールしてください。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>バージョン</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html#base-kit">Intel oneAPI</a></td>
+<td>Intel(R) 64, Version 2021.10.0 Build 20230609_000000</td>
+<td>Fortranコンパイラ</td>
+</tr>
+<tr>
+<td><a href="https://visualstudio.microsoft.com/ja/">Microsoft Visual Studio 2019</a></td>
+<td>16.11.8</td>
+<td>C,C++コンパイラ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="os">OS</h2>
+<p>Windows 10 or 11</p>
+<h1 id="家屋倒壊判定モジュールのカスタマイズビルド方法">家屋倒壊判定モジュールのカスタマイズ・ビルド方法</h1>
+<h2 id="1-morpho2dhsolverzipを自分のpcにコピーし解凍する">1. <a href="/resources/customizeModule/morpho2DHSolver.zip">morpho2DHSolver.zip</a>を自分のPCにコピーし解凍する。</h2>
+<p>ファイル構成は以下のようになっています。</p>
+<pre><code class="lang-text">morpho2DHSolver
+  - iRICsolvers_Morpho2DH : ビルド済みのMorpho2DHのソルバー(morpho2d.exe)が保存されるフォルダ
+    - definition.xml : exeのバージョン等が記載されているxml
+    - morpho2d.exe : ビルド済みのMorpho2DHのソルバーのexe
+    - translation_ja_JP.ts : 翻訳ファイル
+  - src : Morpho2DHのソルバーのソース・オブジェクトファイルを収めているフォルダ
+    - build.bat : ビルドを実行するバッチファイル
+    - func_cforce.f90 : 家屋倒壊閾値を変動させるサブルーチン
+    - func_fbuilding.f90 : 土石流外力を計算するサブルーチン
+    - *.obj : 建屋倒壊判定以外のソルバーのビルド済みファイル
+    - *.mod : 建屋倒壊判定以外のソルバーのビルド済みファイル
+    - *.lib : 建屋倒壊判定以外のソルバーのビルド済みファイル
+</code></pre>
+<h2 id="2-家屋倒壊判定モジュールのサブルーチンをカスタマイズする">2. 家屋倒壊判定モジュールのサブルーチンをカスタマイズする。</h2>
+<p>家屋倒壊判定モジュールは以下の二つのサブルーチンで構成されており、この中の処理を更新することで、カスタマイズが出来ます。</p>
+<ul>
+<li><code>func_cforce.f90</code>: 家屋倒壊閾値を変動させるサブルーチン</li>
+<li><code>func_fbuilding.f90</code>: 土石流外力を計算するサブルーチン</li>
+</ul>
+<h3 id="家屋倒壊閾値を変動させるサブルーチンの説明">家屋倒壊閾値を変動させるサブルーチンの説明</h3>
+<p>以下に示す<code>func_cforce.f90</code>内の<code>function cforce()</code>の中身を書き換えてください。
+それ以外の部分は変更しないでください。</p>
+<pre><code class="lang-fortran">module func_cforce
+USE allo1
+USE allo2
+USE allo3
+USE allo4
+USE allo5
+USE GRIDCOORD
+USE GridCond
+USE CalcCond
+USE Take1Var
+implicit none
+
+contains
+    ! 建屋倒壊とみなす単位長さあたりの力の閾値を計算する
+    ! 全建物(構造種別・階数などによらず)に対して実行される
+    !
+    ! 構造種別の違いはBCritAの絶対値で判定する必要がある。
+    ! RC等の非木造のBCritAは木造に比べるとかなり大きいという仮定の元に判定する。
+    !
+    ! [IN]
+    ! BCritA : 基本となる建屋倒壊判定閾値(N/m)
+    ! IByearA: 建築年(西暦)
+    !          建築年が不明な場合は1000が与えられる。
+    ! BHeightA: 建物高さ(m)
+    ! IBStoryA: 建物階数コード(「20231110_建物属性の設定方法.pdf」記載の建物階数コード)
+    !    501: 地下階なし_地上1階
+    !    502: 地下階なし_地上2階
+    !    503: 地下階なし_地上3階
+    !    504: 地下階なし_地上4-5階
+    !    505: 地下階なし_地上6-7階
+    !    506: 地下階なし_地上8-10階
+    !    507: 地下階なし_地上11-15階
+    !    508: 地下階なし_地上16階以上
+    !    511: 地下階あり_地上1階
+    !    512: 地下階あり_地上2階
+    !    513: 地下階あり_地上3階
+    !    514: 地下階あり_地上4-5階
+    !    515: 地下階あり_地上6-7階
+    !    516: 地下階あり_地上8-10階
+    !    517: 地下階あり_地上11-15階
+    !    518: 地下階あり_地上16階以上
+    !    521: 不明
+    ! [OUT]
+    ! ByearAA: 基本となる建屋倒壊判定閾値BCritAにかける倍率
+    !          年代・階数等によって変動。
+    ! cforce: 建屋倒壊とみなす単位長さあたりの力の閾値(N/m)
+    real*8 function cforce(BCritA, IByearA, ByearAA, BHeightA, IBStoryA)
+        integer, intent(in) :: IByearA,IBStoryA
+        real*8, intent(in)  :: BCritA, BHeightA
+        real*8, intent(out) :: ByearAA
+      
+      ! 初期値の設定
+      ! BCritAの変動は無にする
+      ByearAA=1.0
+      cforce = BCritA
+      
+      ! 木造以外の場合
+      ! 全構造種別に対して実行される
+      ! 構造種別の違いはBCritAの絶対値で判定できる。
+      ! RC等のBCritAは木造に比べるとかなり大きい数値
+      if (BCritA &gt; 2000e+3) then
+        ! 木造以外はこれでおしまい
+        return
+      end if
+      
+      ! 木造の場合
+      ! 年代毎に倒壊判定閾値を変動させる
+      if (IByearA &gt;= 2000) then
+        ByearAA=1.10
+      else if (IByearA &gt;= 1982) then
+        ByearAA=1.00  ! 基準
+      else if (IByearA &gt;= 1959) then
+        ByearAA=1.00
+      else
+        ! 1958年以前と、年代不明=1000の場合
+        ! 年代不明の場合は古すぎて情報が残っていない可能性があるので、
+        ! 安全側の評価結果になるように閾値(耐力)を低めに設定する。
+        ! 耐力をゼロにしてしまうと、建物が完全に無いことになって、実態とかけ離れすぎるリスクが高いので、ゼロにはしない。
+        ByearAA=0.80
+      end if
+      
+      cforce = BCritA*ByearAA
+    end function
+end module
+</code></pre>
+<p><code>func_cforce.f90</code>に実装している判定ロジックは以下の通りです。</p>
+<p><img src="/resources/customizeModule/logic.svg" alt="logic.svg"></p>
+<h3 id="土石流外力を計算するサブルーチンの説明">土石流外力を計算するサブルーチンの説明</h3>
+<p>以下に示す<code>func_fbuilding.f90</code>内の<code>function fbuilding()</code>の中身を書き換えてください。
+それ以外の部分は変更しないでください。</p>
+<pre><code class="lang-fortran">module func_fbuilding
+USE allo1
+USE allo2
+USE allo3
+USE allo4
+USE allo5
+USE GRIDCOORD
+USE GridCond
+USE CalcCond
+USE Take1Var
+implicit none
+
+contains
+    ! 土石流外力を計算するサブルーチン
+    ! 流動の向きや傾斜はこの関数の外で処理済み
+    ! 全構造種別の建物に対して実行される。
+    ! 
+    ! [IN]
+    ! Rmbu: 密度(kg/m^3)
+    ! G: 重力加速度(m/s^2)
+    ! ZZbbu: 土石流深さ(静的応力計算時に使われる値)(m)
+    ! Hbu: 土石流深さ(流動による応力計算時に使われる値)(m)
+    ! Ubu: 流動速(m/s)
+    ! [OUT]
+    ! fbuilding: 単位幅あたり外力(N/m)
+    real*8 function fbuilding(Rmbu,G,ZZbbu,Hbu,Ubu)
+        real*8 :: Rmbu,G,ZZbbu,Hbu,Ubu
+
+        fbuilding = Rmbu*G*ZZbbu**2./2.+Rmbu*Hbu*Ubu**2.
+
+    end function
+end module
+</code></pre>
+<h2 id="3-ビルドする">3. ビルドする</h2>
+<p>スタートメニューから<code>Intel oneAPI command prompt for Intel 64 for Visual Studio 2019</code>を起動し、
+以下のようなコマンドを入力してください。</p>
+<pre><code>&gt; cd /d [morpho2DHSolver.zipを解凍したフォルダ]\src
+&gt; build.bat
+</code></pre>
+<p><code>build.bat</code>の中身は以下のようになっています。1行目のIntel oneAPIのインストールディレクトリは自分の環境に合わせて変更してください。
+ビルド済みのソルバーのexeは、5行目に記載した場所に出力されます。
+ビルド実行後に<code>morpho2d.exe</code>の更新日時が新しくなっていることを確認してください。</p>
+<pre><code>call &quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; intel64 vs2022
+
+ifort /MD -c func_fbuilding.f90
+ifort /MD -c func_cforce.f90
+ifort /MD -o ..\iRICsolvers_Morpho2DH\morpho2d.exe *.obj iriclib.lib
+</code></pre>
+<p><code>Intel oneAPI command prompt for Intel 64 for Visual Studio 2019</code>の起動からビルド実行までの出力は以下のようになります。</p>
+<details><summary>出力</summary>
+<p>:: initializing oneAPI environment...
+Initializing Visual Studio command-line environment...
+Visual Studio version 16.11.8 environment configured.
+&quot;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community&quot;
+Visual Studio command-line environment initialized for: 'x64'
+:  advisor -- latest
+:  compiler -- latest
+:  dal -- latest
+:  debugger -- latest
+:  dev-utilities -- latest
+:  dnnl -- latest
+:  dpcpp-ct -- latest
+:  dpl -- latest
+:  inspector -- latest
+:  ipp -- latest
+:  ippcp -- latest
+:  itac -- latest
+:  mkl -- latest
+:  mpi -- latest
+:  tbb -- latest
+:  vtune -- latest
+:: oneAPI environment initialized ::</p>
+<p>C:\Program Files (x86)\Intel\oneAPI&gt;cd /d D:\projects\FTA3152_PlateauDebrisFlow\24_doc\Building-collapse-detector\assets\morpho2DHSolver\src</p>
+<p>D:\projects\FTA3152_PlateauDebrisFlow\24_doc\Building-collapse-detector\assets\morpho2DHSolver\src&gt;build.bat</p>
+<p>D:\projects\FTA3152_PlateauDebrisFlow\24_doc\Building-collapse-detector\assets\morpho2DHSolver\src&gt;call &quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; intel64 vs2022
+:: WARNING: setvars.bat has already been run. Skipping re-execution.
+To force a re-execution of setvars.bat, use the '--force' option.
+Using '--force' can result in excessive use of your environment variables.
+Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.</p>
+<p>Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.</p>
+<p>Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R) 64, Version 2021.10.0 Build 20230609_000000
+Copyright (C) 1985-2023 Intel Corporation.  All rights reserved.</p>
+<p>Microsoft (R) Incremental Linker Version 14.29.30138.0
+Copyright (C) Microsoft Corporation.  All rights reserved.</p>
+<p>-out:..\iRICsolvers_Morpho2DH\morpho2d.exe
+-subsystem:console
+allo1Mod.obj
+allo2Mod.obj
+allo3Mod.obj
+allo4Mod.obj
+allo5Mod.obj
+CalcCondMod.obj
+func_cforce.obj
+func_fbuilding.obj
+GridCondMod.obj
+GridCoordMod.obj
+iric.obj
+ReadCGNS.obj
+Take3P.obj
+TakeVar1.obj
+Take_1aN.obj
+WriteCGNS.obj
+iriclib.lib</p>
+</details>
+<h2 id="4-ソルバー名を書き換える">4. ソルバー名を書き換える</h2>
+<p>カスタマイズ版のソルバーであることが識別できるように
+<code>iRICsolvers_Morpho2DH\definition.xml</code>の<code>&lt;SolverDefinition&gt;</code>タグの<code>caption</code>属性を書き換えます。
+任意の半角英数字で構いませんが、<code>caption=&quot;Morpho2DH PK12&quot;</code>を<code>caption=&quot;Morpho2DH C1</code>といった形で変更します。</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;SolverDefinition xmlns=&quot;www.iric.net/SolverDefinition/1.0&quot; 
+  name=&quot;morpho2d&quot; 
+  caption=&quot;Morpho2DH PK12&quot; 
+  version=&quot;2.0.23062302&quot;
+        　　・
+        　　・
+        　　・
+</code></pre>
+<h2 id="5-カスタマイズ版のソルバーに切り替える">5. カスタマイズ版のソルバーに切り替える</h2>
+<p>カスタマイズ版のソルバーを指定して計算を実行方法については、
+<a href="/gh-pages/manual/bldgCollapseSimuHowTo.html">家屋倒壊判定モジュール組み込み版のソルバexeへの切り替え</a>をご覧ください。</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
